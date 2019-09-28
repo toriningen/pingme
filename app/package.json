@@ -1,0 +1,13 @@
+{
+  "name": "pingme",
+  "version": "1.0.0",
+  "description": "Simple telegram forwarder",
+  "repository": "https://github.com/toriningen/pingme",
+  "main": "index.js",
+  "author": "toriningen",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "^4.17.1",
+    "telegraf": "^3.32.0"
+  }
+}
