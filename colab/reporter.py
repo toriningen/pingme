@@ -5,7 +5,6 @@ import os
 import socket
 import traceback
 import urllib.request
-import threading
 import time
 
 class Reporter(object):
@@ -31,16 +30,13 @@ class Reporter(object):
       
       return True
     except socket.timeout as exc:
-      print(traceback.format_exc())
       return False
     except urllib.error.URLError as exc:
-      print(traceback.format_exc())
       return False
   
   def send(self, message):
     self._queue.append(str(message))
     while True:
-      print('trying to send', self._queue)
       if self._send(self._queue):
         del self._queue[:]
         return
